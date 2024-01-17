@@ -19,13 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\Assets\vswin2022\images\Binary.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="DataTablePrettyPrinter" Version="0.1.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
