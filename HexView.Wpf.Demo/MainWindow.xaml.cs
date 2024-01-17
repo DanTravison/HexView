@@ -18,6 +18,8 @@
         /// </summary>
         public MainWindow()
         {
+            Stream stream;
+
             InitializeComponent();
 
             // Generate random data so we display something right out of the box without forcing the user to open a file
@@ -27,7 +29,18 @@
             var bytes = new byte[10 * 1024 * 1024];
             rand.NextBytes(bytes);
 
-            Reader = new BinaryReader(new MemoryStream(bytes));
+            string[] args = Environment.GetCommandLineArgs();
+
+            if (args.Length > 1)
+            {
+                stream = File.Open(args[1], FileMode.Open);
+            }
+            else
+            {
+                stream = new MemoryStream(bytes);
+            }
+
+            Reader = new BinaryReader(stream);
         }
 
         /// <inheritdoc/>
